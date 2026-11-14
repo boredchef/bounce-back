@@ -3,7 +3,7 @@ extends Node
 var playing = false
 var jumps_remaining = 0
 
-var respawn_vector = Vector2(0,0)
+var respawn_vector = Vector3(0,0,0)
 
 func die():
 	

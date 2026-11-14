@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cpwhp7hwo4vee"]
+
+[ext_resource type="Script" uid="uid://b8hg3q3liptx" path="res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.gd" id="1_qf6n0"]
+
+[node name="Level Select Screen" type="Node2D" unique_id=813011193]
+script = ExtResource("1_qf6n0")
+
+[node name="Level 1" type="TextureButton" parent="." unique_id=249236555]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 2" type="TextureButton" parent="." unique_id=419927087]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 3" type="TextureButton" parent="." unique_id=722348251]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 4" type="TextureButton" parent="." unique_id=1784953788]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 5" type="TextureButton" parent="." unique_id=511890111]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 6" type="TextureButton" parent="." unique_id=160782033]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 7" type="TextureButton" parent="." unique_id=1235955685]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 8" type="TextureButton" parent="." unique_id=497939732]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 9" type="TextureButton" parent="." unique_id=1335409520]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level 10" type="TextureButton" parent="." unique_id=1043691570]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level 4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Level 5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Level 6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Level 7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Level 8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="Level 9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="Level 10" to="." method="_on_level_10_pressed"]
