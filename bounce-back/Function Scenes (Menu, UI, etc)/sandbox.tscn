@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://chofx7pv5uo8t"]
 
 [node name="Sandbox" type="Node3D" unique_id=1136584525]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=389183711]
+transform = Transform3D(1, 0, 0, 0, 0.950125, 0.31186935, 0, -0.31186935, 0.950125, 0, 0.98885846, 2.0765839)
