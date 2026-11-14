@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://8ac3os8tdstc"]
 
-[ext_resource type="Script" uid="uid://b7gask4lbbnko" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://b7gask4lbbnko" path="res://Function Scenes (Menu, UI, etc)/Menu/menu.gd" id="1_k4aaf"]
 
 [node name="Menu" type="Node2D" unique_id=2139926848]
-script = ExtResource("1_lti8b")
+script = ExtResource("1_k4aaf")
 
 [node name="Play" type="Button" parent="." unique_id=1204671163]
 offset_left = 501.0
