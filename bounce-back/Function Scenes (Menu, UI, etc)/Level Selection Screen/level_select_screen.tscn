@@ -42,8 +42,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Level 10" type="TextureButton" parent="." unique_id=1043691570]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 552.0
+offset_top = 324.0
+offset_right = 592.0
+offset_bottom = 364.0
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
