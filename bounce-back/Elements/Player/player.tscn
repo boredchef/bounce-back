@@ -12,7 +12,7 @@
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=390330126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0736494, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0017475784, 0)
 shape = SubResource("SphereShape3D_pral5")
 debug_color = Color(0.898859, 0.00017673612, 0.76606774, 0.41960785)
 

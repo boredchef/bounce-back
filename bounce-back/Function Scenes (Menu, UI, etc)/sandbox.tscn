@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://chofx7pv5uo8t"]
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_61gm5"]
+[ext_resource type="Texture2D" uid="uid://hkqhjtymcecr" path="res://Sprites/Sandbox.png" id="2_mlyqq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlyqq"]
+albedo_texture = ExtResource("2_mlyqq")
 
 [node name="Sandbox" type="Node3D" unique_id=1136584525]
 
@@ -8,3 +12,12 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.6370273)
 
 [node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_61gm5")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=257744308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -1.1464591, 0.060338378)
+use_collision = true
+size = Vector3(23.62207, 1, 24.44336)
+material = SubResource("StandardMaterial3D_mlyqq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=33184743]
+transform = Transform3D(1, 0, 0, 0, -0.28388682, 0.9588578, 0, -0.9588578, -0.28388682, 0, 2.7218313, 0)
