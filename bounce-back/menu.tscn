@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://8ac3os8tdstc"]
 
+[ext_resource type="Script" uid="uid://b7gask4lbbnko" path="res://menu.gd" id="1_lti8b"]
+
 [node name="Menu" type="Node2D" unique_id=2139926848]
+script = ExtResource("1_lti8b")
+
+[node name="Play" type="Button" parent="." unique_id=1204671163]
+offset_left = 501.0
+offset_top = 202.0
+offset_right = 584.0
+offset_bottom = 248.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="." unique_id=2115562724]
+offset_left = 441.0
+offset_top = 332.0
+offset_right = 635.0
+offset_bottom = 381.0
+text = "Quit pretty please"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
