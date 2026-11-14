@@ -2,19 +2,20 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-
+const JUMP_VELOCITY = 3
+var BOUNCES = 20
+var prev_on_floor = false
 
 func _physics_process(delta: float) -> void:
 	print(position)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
+	if is_on_floor():
+		velocity.y += BOUNCES / 2
+		BOUNCES -= 1
+		GameController.jumps_remaining = BOUNCES
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
