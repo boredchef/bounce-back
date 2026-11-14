@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://uatwcqrtpvmw"]
+
+[ext_resource type="Script" uid="uid://d3gxpf1afxhfa" path="res://Elements/Trampoline on God/trampoline_checkpoint.gd" id="1_47i5a"]
+[ext_resource type="Texture2D" uid="uid://b3kc2xyjcq1nj" path="res://Levels/seamless-curve-lines-motifs-pattern-contemporary-decoration-for-interior-exterior-carpet-textile-garment-cloth-silk-tile-plastic-paper-wrapping-wallpaper-background-ect-vector.jpg" id="1_p03fn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tb2w5"]
+height = 0.07946777
+radius = 0.8876953
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47i5a"]
+albedo_texture = ExtResource("1_p03fn")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v8ptl"]
+material = SubResource("StandardMaterial3D_47i5a")
+top_radius = 0.888
+bottom_radius = 0.888
+height = 0.08
+
+[node name="Trampoline Checkpoint" type="Node3D" unique_id=96018135]
+script = ExtResource("1_47i5a")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1467098173]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1111801282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0016479492, 0)
+shape = SubResource("CylinderShape3D_tb2w5")
+debug_color = Color(0.94364166, 5.4869056e-06, 0.60294896, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1542870229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015981197, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=2047712885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0016479492, 0)
+shape = SubResource("CylinderShape3D_tb2w5")
+debug_color = Color(0.94364166, 5.4869056e-06, 0.60294896, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D2" unique_id=1111672059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009582311, 0)
+mesh = SubResource("CylinderMesh_v8ptl")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
