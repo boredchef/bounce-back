@@ -63,17 +63,15 @@ text = "pick a skin dude"
 
 [node name="buttons" type="VBoxContainer" parent="SkinSelector" unique_id=179733427]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.5
-offset_top = -50.5
-offset_right = 66.5
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -397.0
+offset_top = -332.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="tennis" type="Button" parent="SkinSelector/buttons" unique_id=426072252]
 layout_mode = 2
@@ -83,7 +81,7 @@ text = "tennis ball skin"
 [node name="basketball" type="Button" parent="SkinSelector/buttons" unique_id=879986382]
 layout_mode = 2
 theme_override_font_sizes/font_size = 52
-text = "basket ball skin"
+text = "basketball skin"
 
 [node name="soccerball" type="Button" parent="SkinSelector/buttons" unique_id=2120523911]
 layout_mode = 2
@@ -92,6 +90,8 @@ text = "soccer ball skin"
 
 [node name="go back" type="Button" parent="SkinSelector/buttons" unique_id=712422555]
 layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "go back!!!"
 
 [connection signal="pressed" from="SkinSelector" to="player/MeshInstance3D" method="_on_skin_selector_pressed"]
 [connection signal="pressed" from="SkinSelector/buttons/tennis" to="SkinSelector" method="_on_tennis_pressed"]

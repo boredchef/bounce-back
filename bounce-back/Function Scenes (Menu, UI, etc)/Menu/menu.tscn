@@ -24,6 +24,14 @@ offset_right = 1085.0
 offset_bottom = 574.0
 text = "Quit"
 
+[node name="Button" type="Button" parent="." unique_id=1391387127]
+offset_left = 860.0
+offset_top = 610.0
+offset_right = 1063.0
+offset_bottom = 663.0
+theme_override_font_sizes/font_size = 32
+text = "skin selector"
+
 [node name="Label" type="Label" parent="." unique_id=1908898687]
 offset_right = 1920.0
 offset_bottom = 92.0
@@ -33,13 +41,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1134108473]
-
-[node name="Button" type="Button" parent="." unique_id=1391387127]
-offset_left = 904.0
-offset_top = 418.0
-offset_right = 1010.0
-offset_bottom = 449.0
-text = "skin selector"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
