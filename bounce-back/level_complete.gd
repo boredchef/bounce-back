@@ -12,4 +12,4 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _on_timer_timeout() -> void:
 	GameController.level_beat = level
-	SceneLoader.transition_to_scene("res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.tscn")
+	SceneLoader.transition_to_scene("res://Function Scenes (Menu, UI, etc)/Menu/menu.tscn")
