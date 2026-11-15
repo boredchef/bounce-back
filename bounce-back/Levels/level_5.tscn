@@ -1,7 +1,153 @@
 [gd_scene format=3 uid="uid://d1f4l5vtm40uw"]
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_a6k8o"]
+[ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="2_ftuqy"]
+[ext_resource type="Texture2D" uid="uid://b68eepq1a8qk2" path="res://Sprites/stone.png" id="3_pses1"]
+[ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="4_u0s3x"]
+[ext_resource type="PackedScene" uid="uid://do028lkniieeb" path="res://level_complete.tscn" id="5_ki7po"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u0s3x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_absw3"]
+albedo_texture = ExtResource("2_ftuqy")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ki7po"]
+material = SubResource("StandardMaterial3D_absw3")
+size = Vector2(100, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l70j1"]
+albedo_texture = ExtResource("3_pses1")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_321yd"]
+material = SubResource("StandardMaterial3D_l70j1")
+size = Vector2(100, 100)
 
 [node name="Level5" type="Node3D" unique_id=279239164]
 
 [node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_a6k8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2936163, 16.665077, 0)
+
+[node name="World Boundary" type="StaticBody3D" parent="." unique_id=1808021349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4673847, 0)
+
+[node name="floor collision" type="CollisionShape3D" parent="World Boundary" unique_id=1616781764]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_u0s3x")
+
+[node name="floor mesh" type="MeshInstance3D" parent="World Boundary" unique_id=941458826]
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ki7po")
+
+[node name="back collision" type="CollisionShape3D" parent="World Boundary" unique_id=1344343070]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -0.9999998, 0, 0.9999998, -4.371138e-08, 0, 0, -5)
+shape = SubResource("WorldBoundaryShape3D_u0s3x")
+
+[node name="back mesh" type="MeshInstance3D" parent="World Boundary" unique_id=490734317]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 29.608227, -0.1653347, -4.9490356)
+mesh = SubResource("PlaneMesh_321yd")
+
+[node name="left collision" type="CollisionShape3D" parent="World Boundary" unique_id=499610612]
+transform = Transform3D(-4.371139e-08, 0.99999964, -4.3711374e-08, 0, -4.3711374e-08, -0.99999964, -1, -4.3711374e-08, 1.9106848e-15, -9.248587, 14.249, -14.249)
+shape = SubResource("WorldBoundaryShape3D_u0s3x")
+
+[node name="left mesh" type="MeshInstance3D" parent="World Boundary" unique_id=1423106171]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -9.248587, 0.467, -14.2)
+mesh = SubResource("PlaneMesh_321yd")
+
+[node name="4th wall" type="CollisionShape3D" parent="World Boundary" unique_id=242404736]
+transform = Transform3D(4.3711378e-08, -8.7422734e-08, -0.9999993, 0.99999964, 4.3711363e-08, 4.3711356e-08, 4.3711385e-08, -0.99999964, 8.7422734e-08, 0, 0, 3)
+shape = SubResource("WorldBoundaryShape3D_u0s3x")
+
+[node name="light" type="Node" parent="." unique_id=922894890]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="light" unique_id=243994030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.173916, 18.25207, 6.0965557)
+light_energy = 1.165
+omni_range = 25.292837
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="light" unique_id=1252402465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.297638, 17.986725, 9.172737)
+light_energy = 1.165
+omni_range = 25.292837
+
+[node name="SpotLight3D" type="SpotLight3D" parent="light" unique_id=1640678979]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 61.546783, 18.04124, 0)
+spot_range = 31.402891
+spot_angle = 20.108696
+
+[node name="the actual freaking level geometry i guess" type="Node" parent="." unique_id=1249613659]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=21778949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.996025, 3.919817, 2.4874039)
+use_collision = true
+size = Vector3(37.43457, 14.428223, 16.800797)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=179681553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.056206, -0.66924095, 1.4934044)
+use_collision = true
+size = Vector3(1, 12.285, 14.333)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=2038109170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.144863, 13.879565, 1.6177139)
+use_collision = true
+size = Vector3(1, 12.285, 14.224117)
+
+[node name="hole do not move please" type="CSGBox3D" parent="the actual freaking level geometry i guess/CSGBox3D7" unique_id=1237363512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032661438, 1.5556669, 0.5555897)
+operation = 2
+use_collision = true
+size = Vector3(2.7660522, 4.5834274, 2.3930588)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=26681255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.99479, 1.7158108, 1.2044716)
+use_collision = true
+size = Vector3(19.72174, 14.428223, 13.950203)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=210954335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4408226, 11.004545, 2.2534928)
+use_collision = true
+size = Vector3(4.434082, 1, 2.7489624)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=1656116278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.881645, 7.974781, -2.3217974)
+use_collision = true
+size = Vector3(4.434082, 1, 3.112732)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=1884016978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.685074, 9.760833, 1.7896957)
+use_collision = true
+size = Vector3(1, 20.521666, 13.913071)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="the actual freaking level geometry i guess/CSGBox3D6" unique_id=607678728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.23272, -7.900071, 0.04070568)
+use_collision = true
+size = Vector3(27.435425, 16.467865, 13.913071)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=1588249103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.354122, 12.491774, 1.7325134)
+use_collision = true
+size = Vector3(4.7080574, 1, 13.913)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=1692562970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.508526, 27.27931, 1.7430758)
+use_collision = true
+size = Vector3(1, 29.541569, 13.913)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="the actual freaking level geometry i guess" unique_id=1812282256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.416718, 19.521156, 1.79)
+use_collision = true
+size = Vector3(9.567383, 1, 13.913)
+
+[node name="Trampoline Checkpoint" parent="." unique_id=96018135 instance=ExtResource("4_u0s3x")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 61.801003, -0.025081635, 2.2534928)
+launch_force = 17
+
+[node name="Trampoline Checkpoint2" parent="." unique_id=913578229 instance=ExtResource("4_u0s3x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.855087, 12.991058, -1.4561129)
+launch_force = 14
+
+[node name="Area3D" parent="." unique_id=536826463 instance=ExtResource("5_ki7po")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.984436, 13.891396, 3.486927)
