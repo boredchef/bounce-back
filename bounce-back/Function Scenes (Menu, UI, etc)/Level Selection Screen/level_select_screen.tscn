@@ -1,51 +1,101 @@
 [gd_scene format=3 uid="uid://cpwhp7hwo4vee"]
 
 [ext_resource type="Script" uid="uid://b8hg3q3liptx" path="res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.gd" id="1_qf6n0"]
+[ext_resource type="Texture2D" uid="uid://dvpx0iqtdutoj" path="res://Levels/bluestripeback.png" id="2_o2yov"]
+[ext_resource type="Texture2D" uid="uid://dfmgwuunw2syk" path="res://Sprites/ButtonsONE1.png" id="3_uvmon"]
+[ext_resource type="Texture2D" uid="uid://y7yt7lbkf5k4" path="res://Sprites/ButtonsONE3.png" id="4_ovw03"]
+[ext_resource type="Texture2D" uid="uid://c6kn8v4oq7wsb" path="res://Sprites/ButtonsONE2.png" id="5_pn8xq"]
+[ext_resource type="Texture2D" uid="uid://ck7d4lpv5ubi0" path="res://Sprites/ButtonsONE4.png" id="6_cwsqs"]
+[ext_resource type="Texture2D" uid="uid://dwgt40ihoyyy2" path="res://Sprites/ButtonTWO1.png" id="7_17mdb"]
+[ext_resource type="Texture2D" uid="uid://lpl3wftokkcm" path="res://Sprites/ButtonTWO2.png" id="8_okgxq"]
+[ext_resource type="Texture2D" uid="uid://dgoshysfgvokt" path="res://Sprites/ButtonTWO3.png" id="9_lgg8x"]
+[ext_resource type="Texture2D" uid="uid://bmlxxscla0sav" path="res://Sprites/ButtonTWO4.png" id="10_r2sij"]
 
 [node name="Level Select Screen" type="Node2D" unique_id=813011193]
 script = ExtResource("1_qf6n0")
 
+[node name="Bluestripeback" type="Sprite2D" parent="." unique_id=1087813497]
+position = Vector2(960, 540)
+texture = ExtResource("2_o2yov")
+
 [node name="Level 1" type="TextureButton" parent="." unique_id=249236555]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 281.0
+offset_top = 223.0
+offset_right = 430.0
+offset_bottom = 372.0
+texture_normal = ExtResource("3_uvmon")
+texture_pressed = ExtResource("4_ovw03")
+texture_hover = ExtResource("5_pn8xq")
+texture_disabled = ExtResource("6_cwsqs")
+stretch_mode = 4
 
 [node name="Level 2" type="TextureButton" parent="." unique_id=419927087]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 437.0
+offset_top = 223.0
+offset_right = 596.0
+offset_bottom = 373.0
+texture_normal = ExtResource("7_17mdb")
+texture_pressed = ExtResource("8_okgxq")
+texture_hover = ExtResource("9_lgg8x")
+texture_disabled = ExtResource("10_r2sij")
+stretch_mode = 4
 
 [node name="Level 3" type="TextureButton" parent="." unique_id=722348251]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 107.0
+offset_top = 12.0
+offset_right = 147.0
+offset_bottom = 52.0
 
 [node name="Level 4" type="TextureButton" parent="." unique_id=1784953788]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 199.0
+offset_top = 18.0
+offset_right = 239.0
+offset_bottom = 58.0
 
 [node name="Level 5" type="TextureButton" parent="." unique_id=511890111]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 446.0
+offset_top = 26.0
+offset_right = 486.0
+offset_bottom = 66.0
 
 [node name="Level 6" type="TextureButton" parent="." unique_id=160782033]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 409.0
+offset_top = 34.0
+offset_right = 449.0
+offset_bottom = 74.0
 
 [node name="Level 7" type="TextureButton" parent="." unique_id=1235955685]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 410.0
+offset_top = 60.0
+offset_right = 450.0
+offset_bottom = 100.0
 
 [node name="Level 8" type="TextureButton" parent="." unique_id=497939732]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 226.0
+offset_top = 45.0
+offset_right = 266.0
+offset_bottom = 85.0
 
 [node name="Level 9" type="TextureButton" parent="." unique_id=1335409520]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 103.0
+offset_top = 68.0
+offset_right = 143.0
+offset_bottom = 108.0
 
 [node name="Level 10" type="TextureButton" parent="." unique_id=1043691570]
 offset_left = 552.0
 offset_top = 324.0
 offset_right = 592.0
 offset_bottom = 364.0
+
+[node name="Label" type="Label" parent="." unique_id=2022924737]
+offset_left = 1.0
+offset_top = 48.0
+offset_right = 1919.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 111
+text = "Level Select"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
