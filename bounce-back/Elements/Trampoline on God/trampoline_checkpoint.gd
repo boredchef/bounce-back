@@ -5,5 +5,6 @@ extends Node3D
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "player":
 		body.launch(launch_force)
-	GameController.respawn_vector = checkpoint
+	if checkpoint != Vector3.ZERO:
+		GameController.respawn_vector = checkpoint
 	pass # Replace with function body.
