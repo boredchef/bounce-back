@@ -10,7 +10,7 @@ var height_sensitivity: float = 0.05
 var min_bounce_velocity: float = 1.0
 #horizontal movement
 var max_speed: float = 6.0
-var acceleration: float = 5.0
+var acceleration: float = 2.0
 var friction: float = 5.0
 #ballroll
 var sphere_radius: float = 0.5
@@ -21,7 +21,7 @@ var sphere_radius: float = 0.5
 @onready var character: CharacterBody3D = $"."
 func _process(_delta: float) -> void:
 	camera.global_position.x = camera.global_position.x
-	camera.global_position.y = character.global_position.y
+	camera.global_position.y = character.global_position.y + 1
 	camera.global_position.z = 5
 
 #tracking variables

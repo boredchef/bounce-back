@@ -23,4 +23,4 @@ debug_color = Color(0.898859, 0.00017673612, 0.76606774, 0.41960785)
 mesh = SubResource("SphereMesh_n0qsc")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=379818446]
-transform = Transform3D(1, 0, 0, 0, 0.9722225, 0.23405848, 0, -0.23405848, 0.9722225, 0, 0.9838213, 3.093499)
+transform = Transform3D(1, 0, 0, 0, 0.9461123, 0.32383877, 0, -0.32383877, 0.9461123, 0, 0.9838213, 3.093499)
