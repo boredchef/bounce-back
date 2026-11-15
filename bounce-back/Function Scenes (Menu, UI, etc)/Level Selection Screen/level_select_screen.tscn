@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpwhp7hwo4vee"]
 
 [ext_resource type="Script" uid="uid://b8hg3q3liptx" path="res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.gd" id="1_qf6n0"]
+[ext_resource type="Texture2D" uid="uid://dvpx0iqtdutoj" path="res://Levels/bluestripeback.png" id="2_o2yov"]
 
 [node name="Level Select Screen" type="Node2D" unique_id=813011193]
 script = ExtResource("1_qf6n0")
@@ -46,6 +47,19 @@ offset_left = 552.0
 offset_top = 324.0
 offset_right = 592.0
 offset_bottom = 364.0
+
+[node name="Bluestripeback" type="Sprite2D" parent="." unique_id=1087813497]
+position = Vector2(960, 540)
+texture = ExtResource("2_o2yov")
+
+[node name="Label" type="Label" parent="." unique_id=2022924737]
+offset_left = 1.0
+offset_top = 48.0
+offset_right = 1919.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 111
+text = "Level Select"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]

@@ -1,9 +1,9 @@
 extends Node3D
 
-const speed = 50
+const speed = 1
 
 func _process(delta: float) -> void:
-	position.y -= 50 * delta
+	position.y += speed * delta
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
