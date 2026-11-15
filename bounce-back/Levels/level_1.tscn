@@ -6,9 +6,8 @@
 
 [node name="Level 1" type="Node3D" unique_id=1841454884]
 
-[node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_n0qsc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2709136, 0)
-script = null
+[node name="player" parent="." unique_id=285939949 instance=ExtResource("1_n0qsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5992584, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=400201229]
 transform = Transform3D(1, 0, 0, 0, 0.99797815, 0.06355766, 0, -0.06355766, 0.99797815, 0, 1.4260826, 5.2406826)
