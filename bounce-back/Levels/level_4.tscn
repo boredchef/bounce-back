@@ -1,7 +1,22 @@
 [gd_scene format=3 uid="uid://cx8r6smrr8iqv"]
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_ftfcu"]
+[ext_resource type="PackedScene" uid="uid://do028lkniieeb" path="res://level_complete.tscn" id="2_e78ah"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
 
 [node name="Level4" type="Node3D" unique_id=719727806]
 
 [node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_ftfcu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=244245329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1946962, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=488299449]
+shape = SubResource("WorldBoundaryShape3D_tb2w5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1162187964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4392605, 0)
+
+[node name="Area3D" parent="." unique_id=536826463 instance=ExtResource("2_e78ah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.422295, 0, 0)

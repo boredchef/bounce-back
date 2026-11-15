@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://chfeueu8d5iyd"]
+[gd_scene format=3 uid="uid://d2rxviucqndhi"]
 
 [sub_resource type="Gradient" id="Gradient_rnuwd"]
 interpolation_mode = 1
@@ -38,6 +38,7 @@ section_length = 0.05
 [node name="Confetti" type="Node3D" unique_id=564097815]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1623372951]
+emitting = false
 amount = 40
 explosiveness = 1.0
 trail_enabled = true

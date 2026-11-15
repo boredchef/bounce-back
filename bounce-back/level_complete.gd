@@ -1,12 +1,16 @@
 extends Area3D
 
-@onready var confetti: GPUParticles3D = $confetti
+@onready var confetti: GPUParticles3D = $Confetti/GPUParticles3D
 
 func _on_body_entered(body: Node3D) -> void:
 	print(body.name)
-	if body.name == "player":
+	if body.name == "Player":
+		$"CollisionShape3D".disabled = true
 		confetti.emitting = true
-		print("entered")
+		$Timer.start(1.5)
 
 func _on_timer_timeout() -> void:
-	print("LOAD NEXT SCENE BUT I DO NOT UNDERSTAND THE SCENE LOADER RN")
+	
+	GameController.level_beat = 4
+	SceneLoader.transition_to_scene("res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.tscn")
+	

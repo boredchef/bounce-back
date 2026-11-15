@@ -1,23 +1,38 @@
 [gd_scene format=3 uid="uid://8ac3os8tdstc"]
 
 [ext_resource type="Script" uid="uid://b7gask4lbbnko" path="res://Function Scenes (Menu, UI, etc)/Menu/menu.gd" id="1_k4aaf"]
+[ext_resource type="Texture2D" uid="uid://dvpx0iqtdutoj" path="res://Sprites/bluestripeback.png" id="2_23nvj"]
 
 [node name="Menu" type="Node2D" unique_id=2139926848]
 script = ExtResource("1_k4aaf")
 
+[node name="Bluestripeback" type="Sprite2D" parent="." unique_id=2054561999]
+position = Vector2(960, 540)
+texture = ExtResource("2_23nvj")
+
 [node name="Play" type="Button" parent="." unique_id=1204671163]
-offset_left = 916.0
-offset_top = 306.0
-offset_right = 999.0
-offset_bottom = 352.0
+offset_left = 832.0
+offset_top = 269.0
+offset_right = 1086.4131
+offset_bottom = 410.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="." unique_id=2115562724]
-offset_left = 863.0
-offset_top = 481.0
-offset_right = 1057.0
-offset_bottom = 530.0
-text = "Quit pretty please"
+offset_left = 833.0
+offset_top = 433.0
+offset_right = 1085.0
+offset_bottom = 574.0
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=1908898687]
+offset_right = 1920.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 94
+text = "Select Option"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1134108473]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

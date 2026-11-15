@@ -1,6 +1,7 @@
 extends Node2D
 
 
+@onready var audio = $AudioStreamPlayer
 
 func _on_play_pressed() -> void:
 	GameController.playing = true
