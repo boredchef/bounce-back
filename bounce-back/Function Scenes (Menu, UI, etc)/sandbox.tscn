@@ -1,17 +1,49 @@
 [gd_scene format=3 uid="uid://chofx7pv5uo8t"]
 
-[ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_61gm5"]
+[ext_resource type="Script" uid="uid://3p0cbed3ix6j" path="res://Elements/Player/character_body_3d.gd" id="1_mlyqq"]
 [ext_resource type="Texture2D" uid="uid://hkqhjtymcecr" path="res://Sprites/Sandbox.png" id="2_mlyqq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pral5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8wryp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlyqq"]
 albedo_texture = ExtResource("2_mlyqq")
 
+[sub_resource type="Environment" id="Environment_iy5x0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1lm5o"]
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 424.75998
+gravity = Vector3(0, -10000000, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1w2p"]
+albedo_texture = ExtResource("2_mlyqq")
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_yfbbk"]
+material = SubResource("StandardMaterial3D_b1w2p")
+size = 0.1
+sections = 3
+section_length = 1.0
+
 [node name="Sandbox" type="Node3D" unique_id=1136584525]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=389183711]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.6370273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.66659, 1.0720387, 22.755836)
 
-[node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_61gm5")]
+[node name="Player" type="Node3D" parent="." unique_id=526610686]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player" unique_id=41353231]
+script = ExtResource("1_mlyqq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D" unique_id=390330126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0017475784, 0)
+shape = SubResource("SphereShape3D_pral5")
+debug_color = Color(0.898859, 0.00017673612, 0.76606774, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CharacterBody3D" unique_id=455417896]
+mesh = SubResource("SphereMesh_8wryp")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=257744308]
 transform = Transform3D(0.99073887, 0.13578124, 0, -0.13578124, 0.99073887, 0, 0, 0, 1, 2.9802322e-08, -1.1464591, 0.060338378)
@@ -20,4 +52,19 @@ size = Vector3(23.62207, 1, 24.44336)
 material = SubResource("StandardMaterial3D_mlyqq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=33184743]
-transform = Transform3D(0.025880503, 0.28379172, -0.95853657, 0.999665, -0.0073471335, 0.024815721, 0, -0.9588578, -0.28388682, 0.5206518, 0.464283, -8.886684)
+transform = Transform3D(0.46063033, 0.25197572, -0.85107464, 0.88759214, -0.1307669, 0.441679, -1.5971152e-10, -0.9588578, -0.28388685, 0.5206518, 0.464283, -8.886684)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2038020693]
+environment = SubResource("Environment_iy5x0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=620005962]
+transform = Transform3D(0.9353133, 0.30863756, -0.17300844, -0.3237223, 0.9438212, -0.06637272, 0.14280392, 0.11808599, 0.98268133, 5.2844915, -4.3639717, -0.84806746)
+use_collision = true
+size = Vector3(41.40695, 6.6202087, 1)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=362263980]
+transform = Transform3D(1, 3.1664968e-08, 1.4901161e-08, -9.313226e-10, 1, 0, 1.4901161e-08, 7.450581e-09, 1, -90.65114, -0.0057991743, 3.604186)
+trail_enabled = true
+trail_lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_1lm5o")
+draw_pass_1 = SubResource("RibbonTrailMesh_yfbbk")
