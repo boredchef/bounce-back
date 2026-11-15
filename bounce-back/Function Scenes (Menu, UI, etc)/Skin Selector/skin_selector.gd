@@ -20,8 +20,6 @@ func _on_soccerball_pressed() -> void:
 	GameController.skin = "basketball"
 	print("set skin to soccer ball")
 	
-	
-
 
 func _on_go_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Function Scenes (Menu, UI, etc)/Menu/menu.tscn")
