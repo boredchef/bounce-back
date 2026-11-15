@@ -1,11 +1,5 @@
 extends CharacterBody3D
 
-@onready var camera: Camera3D = $Camera3D
-@onready var character: CharacterBody3D = $"."
-func _process(_delta: float) -> void:
-	camera.global_position.x = character.global_position.x
-	camera.global_position.y = character.global_position.y
-	camera.global_position.z = 5
 
 #bounciness
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -16,12 +10,19 @@ var height_sensitivity: float = 0.05
 var min_bounce_velocity: float = 1.0
 #horizontal movement
 var max_speed: float = 6.0
-var acceleration: float = 10.0
-var friction: float = 8.0
+var acceleration: float = 5.0
+var friction: float = 5.0
 #ballroll
 var sphere_radius: float = 0.5
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var previous_position: Vector3 = global_position
+#camera
+@onready var camera: Camera3D = $Camera3D
+@onready var character: CharacterBody3D = $"."
+func _process(_delta: float) -> void:
+	camera.global_position.x = camera.global_position.x
+	camera.global_position.y = character.global_position.y
+	camera.global_position.z = 5
 
 #tracking variables
 var current_bounce: float = 0.5
