@@ -9,6 +9,10 @@ const SPEED = 5.0
 @export var height_sensitivity: float = 0.05
 @export var min_bounce_velocity: float = 1.0
 
+@export var max_speed: float = 6.0
+@export var acceleration: float = 10.0
+@export var friction: float = 8.0
+
 # Tracking variables
 var current_bounce: float = 0.5
 var was_in_air: bool = false
@@ -32,14 +36,18 @@ func _physics_process(delta: float) -> void:
 			highest_y = global_position.y
 			
 		velocity.y -= gravity * delta
+		
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	var horizontal_velocity := Vector3(velocity.x, 0, velocity.z)
+	var target_velocity := direction * max_speed
+	if direction != Vector3.ZERO:
+		horizontal_velocity = horizontal_velocity.lerp(target_velocity, clamp(acceleration * delta, 0.0, 1.0))
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		horizontal_velocity = horizontal_velocity.lerp(Vector3.ZERO, clamp(friction * delta, 0.0, 1.0))
+
+	velocity.x = horizontal_velocity.x
+	velocity.z = horizontal_velocity.z
 
 	# 2. Save our vertical velocity BEFORE move_and_slide() wipes it out on impact
 	var impact_velocity_y: float = velocity.y
