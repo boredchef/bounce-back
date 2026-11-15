@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="4_u0s3x"]
 [ext_resource type="PackedScene" uid="uid://do028lkniieeb" path="res://level_complete.tscn" id="5_ki7po"]
 [ext_resource type="PackedScene" uid="uid://crtdj5ck86bvk" path="res://Elements/Moving Trampoline/reset_button.tscn" id="6_321yd"]
+[ext_resource type="Script" uid="uid://re5wqeiheebp" path="res://moving_platform.gd" id="7_1xify"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u0s3x"]
 
@@ -25,6 +26,49 @@ uv1_triplanar = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_321yd"]
 material = SubResource("StandardMaterial3D_l70j1")
 size = Vector2(100, 100)
+
+[sub_resource type="Animation" id="Animation_jcjkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kin2i"]
+resource_name = "move_along_path"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbj6g"]
+_data = {
+&"RESET": SubResource("Animation_jcjkn"),
+&"move_along_path": SubResource("Animation_kin2i")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_1xify"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="Level5" type="Node3D" unique_id=279239164]
 
@@ -148,9 +192,25 @@ launch_force = 17
 
 [node name="Trampoline Checkpoint2" parent="." unique_id=913578229 instance=ExtResource("4_u0s3x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.855087, 12.974564, -1.4561129)
-launch_force = 25
+launch_force = 18
 
 [node name="Area3D" parent="." unique_id=536826463 instance=ExtResource("5_ki7po")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.984436, 13.891396, 3.486927)
 
 [node name="Reset Button" parent="." unique_id=997039079 instance=ExtResource("6_321yd")]
+
+[node name="Moving Platform" type="Node3D" parent="." unique_id=1393809622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.87462, 22.070272, 0)
+script = ExtResource("7_1xify")
+
+[node name="Trampoline Checkpoint" parent="Moving Platform" unique_id=1997928197 instance=ExtResource("4_u0s3x")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving Platform" unique_id=304888767]
+libraries/ = SubResource("AnimationLibrary_qbj6g")
+
+[node name="Path3D" type="Path3D" parent="Moving Platform" unique_id=796345287]
+curve = SubResource("Curve3D_1xify")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Moving Platform/Path3D" unique_id=2033501963]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
