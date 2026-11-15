@@ -18,4 +18,11 @@ offset_top = 23.0
 offset_right = 1897.0
 offset_bottom = 120.0
 
+[node name="Label" type="Label" parent="." unique_id=1505373223]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 152.0
+offset_bottom = 97.0
+
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

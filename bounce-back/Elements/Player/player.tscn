@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://dpyakersvlvjj"]
 
 [ext_resource type="Script" uid="uid://3p0cbed3ix6j" path="res://Elements/Player/character_body_3d.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://diwsrg2fvgrsp" path="res://Levels/thissucksandisatrampoline.jpg" id="2_a3htu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ifq1"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_a3htu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8in3v"]
+albedo_texture = ExtResource("2_a3htu")
+
+[sub_resource type="SphereMesh" id="SphereMesh_n0qsc"]
+material = SubResource("StandardMaterial3D_8in3v")
 
 [node name="player" type="CharacterBody3D" unique_id=285939949]
 script = ExtResource("1_4flbx")
@@ -15,4 +20,4 @@ shape = SubResource("SphereShape3D_7ifq1")
 debug_color = Color(0.898859, 0.00017673612, 0.76606774, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1796371379]
-mesh = SubResource("SphereMesh_a3htu")
+mesh = SubResource("SphereMesh_n0qsc")
