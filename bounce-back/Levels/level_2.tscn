@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mlacrgew4iaf"]
 
-[ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://player.gd" id="1_arsda"]
-[ext_resource type="Script" uid="uid://dvwussu0lw2vs" path="res://Levels/camera_3d.gd" id="2_arsda"]
+[ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://Elements/Player/player.gd" id="1_arsda"]
+[ext_resource type="Script" uid="uid://dvwussu0lw2vs" path="res://camera_3d.gd" id="2_arsda"]
 [ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="2_kbe2v"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pral5"]

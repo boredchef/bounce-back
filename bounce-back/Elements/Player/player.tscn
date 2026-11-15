@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpyakersvlvjj"]
 
-[ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://player.gd" id="1_a3htu"]
-[ext_resource type="Texture2D" uid="uid://diwsrg2fvgrsp" path="res://Levels/thissucksandisatrampoline.jpg" id="2_a3htu"]
+[ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://Elements/Player/player.gd" id="1_a3htu"]
+[ext_resource type="Texture2D" uid="uid://diwsrg2fvgrsp" path="res://Sprites/thissucksandisatrampoline.jpg" id="2_a3htu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ifq1"]
 
@@ -21,3 +21,6 @@ debug_color = Color(0.898859, 0.00017673612, 0.76606774, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1796371379]
 mesh = SubResource("SphereMesh_n0qsc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=379818446]
+transform = Transform3D(1, 0, 0, 0, 0.9461123, 0.32383877, 0, -0.32383877, 0.9461123, 0, 0.9838213, 3.093499)

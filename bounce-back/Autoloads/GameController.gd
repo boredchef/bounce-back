@@ -14,6 +14,6 @@ func die():
 	SceneLoader.transition_to_scene(current_scene)
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if jumps_remaining <= 0:
 		die()

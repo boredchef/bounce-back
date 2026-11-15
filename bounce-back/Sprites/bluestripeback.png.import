@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvpx0iqtdutoj"
-path="res://.godot/imported/bluestripeback.png-403caf854679a729dec0a0be975d911d.ctex"
+path="res://.godot/imported/bluestripeback.png-dc04eb1dc5e40a518e31a460945c9a72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/bluestripeback.png"
-dest_files=["res://.godot/imported/bluestripeback.png-403caf854679a729dec0a0be975d911d.ctex"]
+source_file="res://Sprites/bluestripeback.png"
+dest_files=["res://.godot/imported/bluestripeback.png-dc04eb1dc5e40a518e31a460945c9a72.ctex"]
 
 [params]
 

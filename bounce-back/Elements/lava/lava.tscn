@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhvd5mtlcnlia"]
 
-[ext_resource type="Script" uid="uid://bmekifcgikfsr" path="res://lava.gd" id="1_0jvjh"]
-[ext_resource type="Texture2D" uid="uid://cmyp00e5f3nk1" path="res://Levels/lava-magma-with-stones-in-cartoon-style-seamless-pattern-background-eruption-effect-landscape-texture-design-illustration-vector.jpg" id="2_t278e"]
+[ext_resource type="Script" uid="uid://bmekifcgikfsr" path="res://Elements/lava/lava.gd" id="1_0jvjh"]
+[ext_resource type="Texture2D" uid="uid://cmyp00e5f3nk1" path="res://Sprites/lava-magma-with-stones-in-cartoon-style-seamless-pattern-background-eruption-effect-landscape-texture-design-illustration-vector.jpg" id="2_t278e"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
 
