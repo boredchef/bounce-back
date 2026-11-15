@@ -1,7 +1,62 @@
 [gd_scene format=3 uid="uid://c6vulaq2phso0"]
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_cb8d3"]
+[ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="2_5lru4"]
+[ext_resource type="Texture2D" uid="uid://b68eepq1a8qk2" path="res://Sprites/stone.png" id="3_ej5lj"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ej5lj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_absw3"]
+albedo_texture = ExtResource("2_5lru4")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_padch"]
+material = SubResource("StandardMaterial3D_absw3")
+size = Vector2(1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l70j1"]
+albedo_texture = ExtResource("3_ej5lj")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pral5"]
+material = SubResource("StandardMaterial3D_l70j1")
+size = Vector2(100, 100)
 
 [node name="Level3" type="Node3D" unique_id=1455130345]
 
 [node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_cb8d3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.856743, 7.0247564, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1509072153]
+transform = Transform3D(1, 0, 0, 0, 0.99089825, 0.1346129, 0, -0.1346129, 0.99089825, 0, 1.1738682, 4.70347)
+
+[node name="World Boundary" type="StaticBody3D" parent="." unique_id=2003011496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4673847, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundary" unique_id=1398856938]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_ej5lj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World Boundary" unique_id=996270981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3657552, -4.0855665)
+mesh = SubResource("PlaneMesh_padch")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World Boundary" unique_id=1242749887]
+transform = Transform3D(1, 0, 0, 0, -4.371138e-08, -0.9999998, 0, 0.9999998, -4.371138e-08, 0, 0, -14.248864)
+shape = SubResource("WorldBoundaryShape3D_ej5lj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World Boundary" unique_id=258631411]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -14.2)
+mesh = SubResource("PlaneMesh_pral5")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World Boundary" unique_id=1131001079]
+transform = Transform3D(-4.371139e-08, 0.99999964, -4.3711374e-08, 0, -4.3711374e-08, -0.99999964, -1, -4.3711374e-08, 1.9106848e-15, -20, 14.249, -14.249)
+shape = SubResource("WorldBoundaryShape3D_ej5lj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World Boundary" unique_id=946885754]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -20, 0.467, -14.2)
+mesh = SubResource("PlaneMesh_pral5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1292793909]
+transform = Transform3D(0.9007242, 0, 0.43439153, -0.41721353, 0.278435, 0.8651051, -0.120949805, -0.96045506, 0.25079313, 0, 29.846388, 0)
