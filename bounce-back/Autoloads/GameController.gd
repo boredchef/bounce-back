@@ -1,5 +1,6 @@
 extends Node
 
+var skin = "res://Balls/tennis.tres"
 var playing = false
 var jumps_remaining = 0
 var level_beat = 0

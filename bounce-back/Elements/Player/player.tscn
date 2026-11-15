@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://Elements/Player/player.gd" id="1_a3htu"]
 [ext_resource type="Material" uid="uid://fswatrxgboxc" path="res://Balls/tennis.tres" id="2_a3htu"]
+[ext_resource type="Script" uid="uid://c5m2bu2pdbmd3" path="res://Elements/Player/mesh3dskin.gd" id="3_8in3v"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ifq1"]
 
@@ -18,6 +19,9 @@ debug_color = Color(0.898859, 0.00017673612, 0.76606774, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1796371379]
 mesh = SubResource("SphereMesh_n0qsc")
+script = ExtResource("3_8in3v")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=379818446]
 transform = Transform3D(1, 0, 0, 0, 0.9461123, 0.32383877, 0, -0.32383877, 0.9461123, 0, 0.9838213, 3.093499)
+
+[connection signal="pressed" from="." to="MeshInstance3D" method="_on_player_pressed"]

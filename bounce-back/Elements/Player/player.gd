@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal pressed(skin)
 
 #bounciness
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -19,6 +20,10 @@ var sphere_radius: float = 0.5
 #camera
 @onready var camera: Camera3D = $Camera3D
 @onready var character: CharacterBody3D = $"."
+
+#skin selector scene
+const SKIN_SELECTOR = preload("res://Function Scenes (Menu, UI, etc)/Skin Selector/skin_selector.tscn")
+
 func _process(_delta: float) -> void:
 	camera.global_position.x = camera.global_position.x
 	camera.global_position.y = character.global_position.y + 1
@@ -34,6 +39,7 @@ var lockedY: bool = true
 var posY: float = 5.0
 
 func _ready() -> void:
+	applySkin()
 	current_bounce = base_bounce
 	start_y = global_position.y
 	highest_y = global_position.y
@@ -113,3 +119,13 @@ func roll_sphere() -> void:
 		mesh.global_rotate(rotation_axis, angle)
 	
 	previous_position = global_position
+
+func applySkin() -> void:
+	var currentSkin = GameController.skin
+	match currentSkin: 
+		"tennis":
+			pressed.emit("tennis")
+		"tennis":
+			pressed.emit("tennis")
+		"tennis":
+			pressed.emit("tennis")

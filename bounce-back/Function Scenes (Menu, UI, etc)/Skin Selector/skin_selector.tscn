@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bb4f38c84u2fd"]
+
+[ext_resource type="Script" uid="uid://h81caosf1aww" path="res://Function Scenes (Menu, UI, etc)/Skin Selector/skin_selector.gd" id="1_bkkiw"]
+
+[node name="SkinSelector" type="Control" unique_id=657169533]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bkkiw")
+
+[node name="Label" type="Label" parent="." unique_id=1589601301]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.5
+offset_right = 248.5
+offset_bottom = 88.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 200)
+theme_override_font_sizes/font_size = 64
+text = "pick a skin dude"
+
+[node name="buttons" type="VBoxContainer" parent="." unique_id=179733427]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -50.5
+offset_right = 66.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tennis" type="Button" parent="buttons" unique_id=426072252]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "tennis ball skin"
+
+[node name="basketball" type="Button" parent="buttons" unique_id=879986382]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "basket ball skin"
+
+[node name="soccerball" type="Button" parent="buttons" unique_id=2120523911]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "soccer ball skin"
+
+[node name="go back" type="Button" parent="buttons" unique_id=712422555]
+layout_mode = 2
+
+[connection signal="pressed" from="buttons/tennis" to="." method="_on_tennis_pressed"]
+[connection signal="pressed" from="buttons/basketball" to="." method="_on_basketball_pressed"]
+[connection signal="pressed" from="buttons/soccerball" to="." method="_on_soccerball_pressed"]
+[connection signal="pressed" from="buttons/go back" to="." method="_on_go_back_pressed"]
