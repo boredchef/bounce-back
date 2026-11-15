@@ -81,7 +81,7 @@ text = "tennis ball skin"
 [node name="basketball" type="Button" parent="SkinSelector/buttons" unique_id=879986382]
 layout_mode = 2
 theme_override_font_sizes/font_size = 52
-text = "basket ball skin"
+text = "basketball skin"
 
 [node name="soccerball" type="Button" parent="SkinSelector/buttons" unique_id=2120523911]
 layout_mode = 2
