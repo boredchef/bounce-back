@@ -12,14 +12,13 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var max_speed: float = 6.0
 @export var acceleration: float = 10.0
 @export var friction: float = 8.0
-
-@export var speed: float = 6.0
+#ballroll
 @export var sphere_radius: float = 0.5
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var previous_position: Vector3 = global_position
 
-# Tracking variables
+#tracking variables
 var current_bounce: float = 0.5
 var was_in_air: bool = false
 var start_y: float = 0.0
@@ -57,14 +56,11 @@ func _physics_process(delta: float) -> void:
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
 
-	# 2. Save our vertical velocity BEFORE move_and_slide() wipes it out on impact
 	var impact_velocity_y: float = velocity.y
 
-	# 3. Move the character and detect collisions
 	move_and_slide()
 	roll_sphere()
 
-	# 4. Check if we just landed AFTER moving
 	if is_on_floor() and was_in_air:
 		was_in_air = false
 		var landing_y: float = global_position.y
