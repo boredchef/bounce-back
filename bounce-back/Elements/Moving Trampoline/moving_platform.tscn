@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b5w2ofm11u74j"]
+
+[ext_resource type="Script" uid="uid://re5wqeiheebp" path="res://moving_platform.gd" id="1_jcjkn"]
+[ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="2_kbi4t"]
+
+[sub_resource type="Animation" id="Animation_jcjkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kin2i"]
+resource_name = "move_along_path"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbj6g"]
+_data = {
+&"RESET": SubResource("Animation_jcjkn"),
+&"move_along_path": SubResource("Animation_kin2i")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_a70yu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10.115, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Moving Platform" type="Node3D" unique_id=1393809622]
+script = ExtResource("1_jcjkn")
+
+[node name="Trampoline Checkpoint" parent="." unique_id=96018135 instance=ExtResource("2_kbi4t")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=304888767]
+libraries/ = SubResource("AnimationLibrary_qbj6g")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=796345287]
+curve = SubResource("Curve3D_a70yu")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2033501963]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
