@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d0kkvwqruyms8"]
+
+[ext_resource type="Texture2D" uid="uid://diwsrg2fvgrsp" path="res://Sprites/thissucksandisatrampoline.jpg" id="1_s1edl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pral5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0bs4"]
+albedo_texture = ExtResource("1_s1edl")
+
+[sub_resource type="SphereMesh" id="SphereMesh_pral5"]
+material = SubResource("StandardMaterial3D_i0bs4")
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=182275093]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=857791881]
+shape = SubResource("SphereShape3D_pral5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1671836077]
+mesh = SubResource("SphereMesh_pral5")

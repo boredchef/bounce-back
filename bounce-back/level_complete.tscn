@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://do028lkniieeb"]
+
+[ext_resource type="Script" uid="uid://cjddpsrda5pvk" path="res://level_complete.gd" id="1_sxtul"]
+[ext_resource type="PackedScene" uid="uid://do8i31yp3gykj" path="res://scene_loader.tscn" id="2_jia4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jia4s"]
+size = Vector3(37.89453, 1, 43.47751)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jia4s"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_472by"]
+billboard_mode = 1
+use_particle_trails = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_xvwna"]
+material = SubResource("StandardMaterial3D_472by")
+
+[node name="Area3D" type="Area3D" unique_id=536826463]
+script = ExtResource("1_sxtul")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1029031046]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -8.063556e-07, 18.447266, -0.62361145)
+shape = SubResource("BoxShape3D_jia4s")
+
+[node name="confetti" type="GPUParticles3D" parent="." unique_id=583340320]
+emitting = false
+transform_align = 1
+transform_align_channel_filter = 1
+trail_enabled = true
+trail_lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_jia4s")
+draw_pass_1 = SubResource("TubeTrailMesh_xvwna")
+
+[node name="Timer" type="Timer" parent="." unique_id=1800066529]
+
+[node name="scene_loader" parent="." unique_id=571933211 instance=ExtResource("2_jia4s")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
