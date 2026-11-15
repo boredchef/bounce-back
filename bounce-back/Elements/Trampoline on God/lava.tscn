@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dhvd5mtlcnlia"]
+
+[ext_resource type="Script" uid="uid://bmekifcgikfsr" path="res://lava.gd" id="1_0jvjh"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
+
+[node name="Lava" type="Node3D" unique_id=1199304911]
+script = ExtResource("1_0jvjh")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=942259572]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1071985014]
+shape = SubResource("WorldBoundaryShape3D_tb2w5")
+debug_color = Color(0.8542521, 0.36923906, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
