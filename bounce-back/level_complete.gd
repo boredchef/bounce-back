@@ -1,7 +1,7 @@
 extends Area3D
 
 @onready var confetti: GPUParticles3D = $Confetti/GPUParticles3D
-
+@export var level: int = 0
 func _on_body_entered(body: Node3D) -> void:
 	print(body.name)
 	if body.name == "Player":
@@ -10,7 +10,5 @@ func _on_body_entered(body: Node3D) -> void:
 		$Timer.start(1.5)
 
 func _on_timer_timeout() -> void:
-	
-	GameController.level_beat = 4
+	GameController.level_beat = level
 	SceneLoader.transition_to_scene("res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.tscn")
-	
