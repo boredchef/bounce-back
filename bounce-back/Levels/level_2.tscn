@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://mlacrgew4iaf"]
 
-[ext_resource type="Script" uid="uid://bxeus1b5u258d" path="res://Levels/level_2.gd" id="1_dgq3b"]
-[ext_resource type="Script" uid="uid://3p0cbed3ix6j" path="res://Elements/Player/character_body_3d.gd" id="1_kbe2v"]
+[ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://player.gd" id="1_arsda"]
 [ext_resource type="Script" uid="uid://dvwussu0lw2vs" path="res://Levels/camera_3d.gd" id="2_arsda"]
 [ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="2_kbe2v"]
 
@@ -34,12 +33,12 @@ bounce = 1.25
 [sub_resource type="SphereMesh" id="SphereMesh_kbe2v"]
 
 [node name="Level2" type="Node3D" unique_id=1159978933]
-script = ExtResource("1_dgq3b")
 
 [node name="Player" type="Node3D" parent="." unique_id=526610686]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Player" unique_id=41353231]
-script = ExtResource("1_kbe2v")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7987013, 0)
+script = ExtResource("1_arsda")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D" unique_id=390330126]
 shape = SubResource("SphereShape3D_pral5")
