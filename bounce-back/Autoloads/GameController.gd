@@ -11,7 +11,7 @@ func wait(time):
 	pass
 
 func die():
-	SceneLoader.transition_to_scene(current_scene)
+	#SceneLoader.transition_to_scene(current_scene)
 	pass
 
 func _process(_delta: float) -> void:
