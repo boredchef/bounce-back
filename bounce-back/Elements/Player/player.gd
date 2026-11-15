@@ -38,6 +38,7 @@ var just_launched: bool = false
 var lockedY: bool = true
 var posY: float = 5.0
 
+var prevVelY = 1
 func _ready() -> void:
 	applySkin()
 	current_bounce = base_bounce
@@ -102,10 +103,17 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 0.0
 			GameController.die()
 		
-			
+		
+		
 		if just_launched:
 			just_launched = false
 			return
+		
+	print(prevVelY, velocity.y)
+	if prevVelY == 0 and velocity.y == 0:
+		get_tree().reload_current_scene()
+	else:
+		prevVelY = velocity.y
 
 func roll_sphere() -> void:
 	var displacement := global_position - previous_position
