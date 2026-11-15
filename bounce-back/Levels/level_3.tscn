@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_ej5lj"]
 [ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="2_5lru4"]
 [ext_resource type="Texture2D" uid="uid://b68eepq1a8qk2" path="res://Sprites/stone.png" id="3_ej5lj"]
+[ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="4_absw3"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ej5lj"]
 
@@ -26,7 +27,7 @@ size = Vector2(100, 100)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ej5lj"]
 albedo_texture = ExtResource("2_5lru4")
 
-[node name="Level3" type="Node3D" unique_id=1455130345]
+[node name="Tutorial_Demo" type="Node3D" unique_id=1455130345]
 
 [node name="player" parent="." unique_id=285939949 instance=ExtResource("1_ej5lj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.77413, 15.64253, 0)
@@ -64,11 +65,51 @@ shape = SubResource("WorldBoundaryShape3D_ej5lj")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1292793909]
 transform = Transform3D(-0.4486887, -0.060313225, 0.8916507, 0.026203189, -0.9981791, -0.054333244, 0.893304, -0.0010145524, 0.4494521, 0, 29.846388, 0)
 
-[node name="Platforms" type="StaticBody3D" parent="." unique_id=358523445]
+[node name="Platforms" type="Node3D" parent="." unique_id=1968971316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4673847, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Platforms" unique_id=2058866579]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.772644, 0, 0)
+[node name="CSGBox3D5" type="CSGBox3D" parent="Platforms" unique_id=452170494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.846665, -1.5643731, 0.25161457)
 use_collision = true
-size = Vector3(5, 15, 20)
+size = Vector3(5, 11.923096, 19.480103)
 material = SubResource("StandardMaterial3D_ej5lj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Platforms" unique_id=2058866579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8299546, 3.8863106, 0.25161457)
+use_collision = true
+size = Vector3(5, 22.824463, 19.480103)
+material = SubResource("StandardMaterial3D_ej5lj")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Platforms" unique_id=578355997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.550121, 3.012074, 0.25161457)
+use_collision = true
+size = Vector3(5, 20.14122, 19.480103)
+material = SubResource("StandardMaterial3D_ej5lj")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Platforms" unique_id=1645673481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.896368, -2.2087822, 0.25161457)
+use_collision = true
+size = Vector3(5, 10.634277, 19.480103)
+material = SubResource("StandardMaterial3D_ej5lj")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Platforms" unique_id=682157387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.45519, -3.3146172, 0.25161457)
+use_collision = true
+size = Vector3(5, 8.422607, 19.480103)
+material = SubResource("StandardMaterial3D_ej5lj")
+
+[node name="Trampolines" type="Node3D" parent="." unique_id=1560105614]
+
+[node name="Trampoline Checkpoint" parent="Trampolines" unique_id=96018135 instance=ExtResource("4_absw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4124722, -1.8386502)
+
+[node name="Trampoline Checkpoint2" parent="Trampolines" unique_id=353249444 instance=ExtResource("4_absw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.750176, 4.4124722, -1.8386502)
+
+[node name="Text" type="Node3D" parent="." unique_id=632422529]
+
+[node name="Label3D" type="Label3D" parent="Text" unique_id=233425621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.398146, 7.204151, 0.96111774)
+billboard = 1
+text = "make it on to the platform!"
+font_size = 128

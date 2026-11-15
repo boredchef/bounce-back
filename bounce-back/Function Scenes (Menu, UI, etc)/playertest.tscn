@@ -18,6 +18,7 @@ size = Vector2(1000, 1000)
 [node name="Node3D" type="Node3D" unique_id=187378491]
 
 [node name="player" parent="." unique_id=285939949 instance=ExtResource("1_5pr24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.261403, 0)
 
 [node name="World Boundary" type="StaticBody3D" parent="." unique_id=151929866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4673847, 0)

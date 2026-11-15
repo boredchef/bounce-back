@@ -98,6 +98,7 @@ func _physics_process(delta: float) -> void:
 		if just_launched:
 			just_launched = false
 			return
+
 func roll_sphere() -> void:
 	var displacement := global_position - previous_position
 	displacement.y = 0.0
