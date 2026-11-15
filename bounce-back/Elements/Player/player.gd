@@ -1,20 +1,25 @@
 extends CharacterBody3D
 
+@onready var camera: Camera3D = $Camera3D
+@onready var character: CharacterBody3D = $"."
+func _process(_delta: float) -> void:
+	camera.global_position.x = character.global_position.x
+	camera.global_position.y = character.global_position.y
+	camera.global_position.z = 5
+
+#bounciness
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-#bounce settings
-@export var base_bounce: float = 0.5
-@export var min_bounce: float = 0.0
-@export var max_bounce: float = 0.8
-@export var height_sensitivity: float = 0.05
-@export var min_bounce_velocity: float = 1.0
-#movement settings
-@export var max_speed: float = 6.0
-@export var acceleration: float = 10.0
-@export var friction: float = 8.0
+var base_bounce: float = 0.5
+var min_bounce: float = 0.0
+var max_bounce: float = 0.8
+var height_sensitivity: float = 0.05
+var min_bounce_velocity: float = 1.0
+#horizontal movement
+var max_speed: float = 6.0
+var acceleration: float = 10.0
+var friction: float = 8.0
 #ballroll
-@export var sphere_radius: float = 0.5
-
+var sphere_radius: float = 0.5
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var previous_position: Vector3 = global_position
 
@@ -23,12 +28,22 @@ var current_bounce: float = 0.5
 var was_in_air: bool = false
 var start_y: float = 0.0
 var highest_y: float = 0.0
+var just_launched: bool = false
+var lockedY: bool = true
+var posY: float = 5.0
 
 func _ready() -> void:
 	current_bounce = base_bounce
 	start_y = global_position.y
 	highest_y = global_position.y
 	previous_position = global_position
+
+func launch(force: float) -> void:
+	velocity.y = force
+	just_launched = true
+	was_in_air = true
+	start_y = global_position.y
+	highest_y = global_position.y
 
 func _physics_process(delta: float) -> void:
 	# 1. Apply gravity while in the air
@@ -65,7 +80,6 @@ func _physics_process(delta: float) -> void:
 		was_in_air = false
 		var landing_y: float = global_position.y
 		
-		# Adjust bounce based on height difference
 		if landing_y > start_y:
 			var height_gained: float = landing_y - start_y
 			current_bounce -= height_gained * height_sensitivity
@@ -75,11 +89,14 @@ func _physics_process(delta: float) -> void:
 			
 		current_bounce = clamp(current_bounce, min_bounce, max_bounce)
 		
-		# Apply the bounce using our saved impact speed
 		if impact_velocity_y < -min_bounce_velocity:
 			velocity.y = -impact_velocity_y * current_bounce
 		else:
 			velocity.y = 0.0
+			
+		if just_launched:
+			just_launched = false
+			return
 func roll_sphere() -> void:
 	var displacement := global_position - previous_position
 	displacement.y = 0.0

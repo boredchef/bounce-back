@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://uatwcqrtpvmw"]
 
 [ext_resource type="Script" uid="uid://d3gxpf1afxhfa" path="res://Elements/Trampoline on God/trampoline_checkpoint.gd" id="1_47i5a"]
-[ext_resource type="Texture2D" uid="uid://b3kc2xyjcq1nj" path="res://Levels/seamless-curve-lines-motifs-pattern-contemporary-decoration-for-interior-exterior-carpet-textile-garment-cloth-silk-tile-plastic-paper-wrapping-wallpaper-background-ect-vector.jpg" id="1_p03fn"]
+[ext_resource type="Texture2D" uid="uid://b3kc2xyjcq1nj" path="res://Sprites/seamless-curve-lines-motifs-pattern-contemporary-decoration-for-interior-exterior-carpet-textile-garment-cloth-silk-tile-plastic-paper-wrapping-wallpaper-background-ect-vector.jpg" id="1_p03fn"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tb2w5"]
 height = 0.07946777

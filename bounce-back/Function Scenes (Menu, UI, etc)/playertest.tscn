@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://1jikdoi4wjjf"]
+
+[ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_5pr24"]
+[ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="3_i35ai"]
+[ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="4_oelfl"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_xgjns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngv86"]
+albedo_texture = ExtResource("3_i35ai")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5wrfp"]
+material = SubResource("StandardMaterial3D_ngv86")
+size = Vector2(1000, 1000)
+
+[node name="Node3D" type="Node3D" unique_id=187378491]
+
+[node name="player" parent="." unique_id=285939949 instance=ExtResource("1_5pr24")]
+
+[node name="World Boundary" type="StaticBody3D" parent="." unique_id=151929866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4673847, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundary" unique_id=14005280]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_xgjns")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World Boundary" unique_id=657402885]
+mesh = SubResource("PlaneMesh_5wrfp")
+
+[node name="Trampoline Checkpoint" parent="." unique_id=96018135 instance=ExtResource("4_oelfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.29281092, -5.302841)

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmyp00e5f3nk1"
-path.s3tc="res://.godot/imported/lava-magma-with-stones-in-cartoon-style-seamless-pattern-background-eruption-effect-landscape-texture-design-illustration-vector.jpg-3661fc8067903b7dab06f193958956a2.s3tc.ctex"
+uid="uid://diwsrg2fvgrsp"
+path.s3tc="res://.godot/imported/thissucksandisatrampoline.jpg-bf53fa65cdb373941d6f4e425ec26da6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Levels/lava-magma-with-stones-in-cartoon-style-seamless-pattern-background-eruption-effect-landscape-texture-design-illustration-vector.jpg"
-dest_files=["res://.godot/imported/lava-magma-with-stones-in-cartoon-style-seamless-pattern-background-eruption-effect-landscape-texture-design-illustration-vector.jpg-3661fc8067903b7dab06f193958956a2.s3tc.ctex"]
+source_file="res://Sprites/thissucksandisatrampoline.jpg"
+dest_files=["res://.godot/imported/thissucksandisatrampoline.jpg-bf53fa65cdb373941d6f4e425ec26da6.s3tc.ctex"]
 
 [params]
 

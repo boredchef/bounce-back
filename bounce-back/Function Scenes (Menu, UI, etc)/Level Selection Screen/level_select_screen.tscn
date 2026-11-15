@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpwhp7hwo4vee"]
 
 [ext_resource type="Script" uid="uid://b8hg3q3liptx" path="res://Function Scenes (Menu, UI, etc)/Level Selection Screen/level_select_screen.gd" id="1_qf6n0"]
-[ext_resource type="Texture2D" uid="uid://dvpx0iqtdutoj" path="res://Levels/bluestripeback.png" id="2_o2yov"]
+[ext_resource type="Texture2D" uid="uid://dvpx0iqtdutoj" path="res://Sprites/bluestripeback.png" id="2_o2yov"]
 [ext_resource type="Texture2D" uid="uid://dfmgwuunw2syk" path="res://Sprites/ButtonsONE1.png" id="3_uvmon"]
 [ext_resource type="Texture2D" uid="uid://y7yt7lbkf5k4" path="res://Sprites/ButtonsONE3.png" id="4_ovw03"]
 [ext_resource type="Texture2D" uid="uid://c6kn8v4oq7wsb" path="res://Sprites/ButtonsONE2.png" id="5_pn8xq"]
@@ -19,10 +19,10 @@ position = Vector2(960, 540)
 texture = ExtResource("2_o2yov")
 
 [node name="Level 1" type="TextureButton" parent="." unique_id=249236555]
-offset_left = 281.0
-offset_top = 223.0
-offset_right = 430.0
-offset_bottom = 372.0
+offset_left = 36.0
+offset_top = 283.0
+offset_right = 336.0
+offset_bottom = 583.0
 texture_normal = ExtResource("3_uvmon")
 texture_pressed = ExtResource("4_ovw03")
 texture_hover = ExtResource("5_pn8xq")
@@ -30,10 +30,10 @@ texture_disabled = ExtResource("6_cwsqs")
 stretch_mode = 4
 
 [node name="Level 2" type="TextureButton" parent="." unique_id=419927087]
-offset_left = 437.0
-offset_top = 223.0
-offset_right = 596.0
-offset_bottom = 373.0
+offset_left = 422.0
+offset_top = 286.0
+offset_right = 722.0
+offset_bottom = 586.0
 texture_normal = ExtResource("7_17mdb")
 texture_pressed = ExtResource("8_okgxq")
 texture_hover = ExtResource("9_lgg8x")
