@@ -10,6 +10,18 @@
 [ext_resource type="Texture2D" uid="uid://lpl3wftokkcm" path="res://Sprites/ButtonTWO2.png" id="8_okgxq"]
 [ext_resource type="Texture2D" uid="uid://dgoshysfgvokt" path="res://Sprites/ButtonTWO3.png" id="9_lgg8x"]
 [ext_resource type="Texture2D" uid="uid://bmlxxscla0sav" path="res://Sprites/ButtonTWO4.png" id="10_r2sij"]
+[ext_resource type="Texture2D" uid="uid://dq3tr6e4pcsmv" path="res://Sprites/ButtonTHREE1.png" id="11_wn6f5"]
+[ext_resource type="Texture2D" uid="uid://c0q21jdlyfy1g" path="res://Sprites/ButtonTHREE2.png" id="12_1f2c6"]
+[ext_resource type="Texture2D" uid="uid://dpuvughmivoaf" path="res://Sprites/ButtonTHREE3.png" id="13_de12y"]
+[ext_resource type="Texture2D" uid="uid://yy3qpui664ay" path="res://Sprites/ButtonTHREE4.png" id="14_lmfrl"]
+[ext_resource type="Texture2D" uid="uid://veeg460x0dd1" path="res://Sprites/ButtonFOUR1.png" id="15_5fas6"]
+[ext_resource type="Texture2D" uid="uid://c0nqkndvy7kd8" path="res://Sprites/ButtonFOUR2.png" id="16_hq2v2"]
+[ext_resource type="Texture2D" uid="uid://dqjds7ul5xrsx" path="res://Sprites/ButtonFOUR3.png" id="17_wo31p"]
+[ext_resource type="Texture2D" uid="uid://cl5x8kqp3wlj3" path="res://Sprites/ButtonFOUR4.png" id="18_mir3q"]
+[ext_resource type="Texture2D" uid="uid://dt1uxndt1fqmb" path="res://Sprites/ButtonFIVE1.png" id="19_uqiul"]
+[ext_resource type="Texture2D" uid="uid://d2aobjykyulhe" path="res://Sprites/ButtonFIVE2.png" id="20_byqu3"]
+[ext_resource type="Texture2D" uid="uid://byvydlrk71kji" path="res://Sprites/ButtonFIVE3.png" id="21_l507i"]
+[ext_resource type="Texture2D" uid="uid://dqrs8pi0u6dcu" path="res://Sprites/ButtonFIVE4.png" id="22_wua8p"]
 
 [node name="Level Select Screen" type="Node2D" unique_id=813011193]
 script = ExtResource("1_qf6n0")
@@ -41,22 +53,37 @@ texture_disabled = ExtResource("10_r2sij")
 stretch_mode = 4
 
 [node name="Level 3" type="TextureButton" parent="." unique_id=722348251]
-offset_left = 107.0
-offset_top = 12.0
-offset_right = 147.0
-offset_bottom = 52.0
+offset_left = 818.0
+offset_top = 287.0
+offset_right = 1105.0
+offset_bottom = 574.0
+texture_normal = ExtResource("11_wn6f5")
+texture_pressed = ExtResource("12_1f2c6")
+texture_hover = ExtResource("13_de12y")
+texture_disabled = ExtResource("14_lmfrl")
+stretch_mode = 4
 
 [node name="Level 4" type="TextureButton" parent="." unique_id=1784953788]
-offset_left = 199.0
-offset_top = 18.0
-offset_right = 239.0
-offset_bottom = 58.0
+offset_left = 1213.0
+offset_top = 276.0
+offset_right = 1513.0
+offset_bottom = 576.0
+texture_normal = ExtResource("15_5fas6")
+texture_pressed = ExtResource("16_hq2v2")
+texture_hover = ExtResource("17_wo31p")
+texture_disabled = ExtResource("18_mir3q")
+stretch_mode = 4
 
 [node name="Level 5" type="TextureButton" parent="." unique_id=511890111]
-offset_left = 446.0
-offset_top = 26.0
-offset_right = 486.0
-offset_bottom = 66.0
+offset_left = 1558.0
+offset_top = 275.0
+offset_right = 1866.0
+offset_bottom = 583.0
+texture_normal = ExtResource("19_uqiul")
+texture_pressed = ExtResource("20_byqu3")
+texture_hover = ExtResource("21_l507i")
+texture_disabled = ExtResource("22_wua8p")
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="." unique_id=2022924737]
 offset_left = 1.0
