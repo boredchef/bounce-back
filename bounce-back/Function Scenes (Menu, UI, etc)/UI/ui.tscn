@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c57r8mkd832iq"]
 
+[ext_resource type="Script" uid="uid://dfcoqd02puq2p" path="res://Function Scenes (Menu, UI, etc)/UI/ui.gd" id="1_44xs3"]
+
 [node name="UI" type="Control" unique_id=531608278]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_44xs3")
+
+[node name="Pause" type="TextureButton" parent="." unique_id=1495379552]
+layout_mode = 0
+offset_left = 1776.0
+offset_top = 23.0
+offset_right = 1897.0
+offset_bottom = 120.0
+
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
