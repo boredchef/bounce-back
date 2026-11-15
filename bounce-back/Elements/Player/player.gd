@@ -131,10 +131,11 @@ func roll_sphere() -> void:
 
 func applySkin() -> void:
 	var currentSkin = GameController.skin
+	print(currentSkin)
 	match currentSkin: 
 		"tennis":
 			pressed.emit("tennis")
-		"tennis":
-			pressed.emit("tennis")
-		"tennis":
-			pressed.emit("tennis")
+		"basketball":
+			pressed.emit("basketball")
+		"soccerball":
+			pressed.emit("soccerball")

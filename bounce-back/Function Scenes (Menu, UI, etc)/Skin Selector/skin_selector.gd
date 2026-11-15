@@ -1,23 +1,22 @@
 extends Control
 
-@onready var player: CharacterBody3D = $"../player"
-
 signal pressed(skin)
+
 func _on_tennis_pressed() -> void:
 	pressed.emit("tennis")
-	GameController.skin = "tennis"	
+	GameController.skin = "tennis"
 	print("set skin to tennis ball")
 
 
 func _on_basketball_pressed() -> void:
 	pressed.emit("basketball")
-	GameController.skin = "baksetball"
+	GameController.skin = "basketball"
 	print("set skin to basketball")
 
 
 func _on_soccerball_pressed() -> void:
 	pressed.emit("soccerball")
-	GameController.skin = "basketball"
+	GameController.skin = "soccerball"
 	print("set skin to soccer ball")
 	
 
