@@ -30,25 +30,30 @@ func _ready() -> void:
 
 func _on_level_1_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_1.tscn")
+	GameController.current_scene = "res://Levels/level_1.tscn"
 	l1.disabled = true
 
 
 
 func _on_level_2_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_2.tscn")
+	GameController.current_scene = "res://Levels/level_2.tscn"
 	l2.disabled = true
 
 
 func _on_level_3_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_3.tscn")
+	GameController.current_scene = "res://Levels/level_3.tscn"
 	l3.disabled = true
 
 
 func _on_level_4_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_4.tscn")
+	GameController.current_scene = "res://Levels/level_4.tscn"
 	l4.disabled = true
 
 
 func _on_level_5_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_5.tscn")
+	GameController.current_scene = "res://Levels/level_5.tscn"
 	l5.disabled = true

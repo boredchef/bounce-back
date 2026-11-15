@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhoocaj3jd7uf"]
+
+[ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_s60kp"]
+[ext_resource type="PackedScene" uid="uid://b8gsngfeph8cp" path="res://Elements/Trampoline on God/lava.tscn" id="2_iqjs3"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
+
+[node name="Level10" type="Node3D" unique_id=1054611165]
+
+[node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_s60kp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5283334, 0)
+
+[node name="Lava" parent="." unique_id=1199304911 instance=ExtResource("2_iqjs3")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=273959627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1627378, 7.3609214)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2075094306]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=39013375]
+shape = SubResource("WorldBoundaryShape3D_tb2w5")
