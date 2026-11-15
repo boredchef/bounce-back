@@ -18,10 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://c0nqkndvy7kd8" path="res://Sprites/ButtonFOUR2.png" id="16_hq2v2"]
 [ext_resource type="Texture2D" uid="uid://dqjds7ul5xrsx" path="res://Sprites/ButtonFOUR3.png" id="17_wo31p"]
 [ext_resource type="Texture2D" uid="uid://cl5x8kqp3wlj3" path="res://Sprites/ButtonFOUR4.png" id="18_mir3q"]
-[ext_resource type="Texture2D" uid="uid://dt1uxndt1fqmb" path="res://Sprites/ButtonFIVE1.png" id="19_uqiul"]
-[ext_resource type="Texture2D" uid="uid://d2aobjykyulhe" path="res://Sprites/ButtonFIVE2.png" id="20_byqu3"]
-[ext_resource type="Texture2D" uid="uid://byvydlrk71kji" path="res://Sprites/ButtonFIVE3.png" id="21_l507i"]
-[ext_resource type="Texture2D" uid="uid://dqrs8pi0u6dcu" path="res://Sprites/ButtonFIVE4.png" id="22_wua8p"]
 
 [node name="Level Select Screen" type="Node2D" unique_id=813011193]
 script = ExtResource("1_qf6n0")
@@ -31,10 +27,10 @@ position = Vector2(960, 540)
 texture = ExtResource("2_o2yov")
 
 [node name="Level 1" type="TextureButton" parent="." unique_id=249236555]
-offset_left = 36.0
-offset_top = 283.0
-offset_right = 336.0
-offset_bottom = 583.0
+offset_left = 185.0
+offset_top = 296.0
+offset_right = 485.0
+offset_bottom = 596.0
 texture_normal = ExtResource("3_uvmon")
 texture_pressed = ExtResource("4_ovw03")
 texture_hover = ExtResource("5_pn8xq")
@@ -42,10 +38,10 @@ texture_disabled = ExtResource("6_cwsqs")
 stretch_mode = 4
 
 [node name="Level 2" type="TextureButton" parent="." unique_id=419927087]
-offset_left = 422.0
-offset_top = 286.0
-offset_right = 722.0
-offset_bottom = 586.0
+offset_left = 608.0
+offset_top = 552.0
+offset_right = 908.0
+offset_bottom = 852.0
 texture_normal = ExtResource("7_17mdb")
 texture_pressed = ExtResource("8_okgxq")
 texture_hover = ExtResource("9_lgg8x")
@@ -53,10 +49,10 @@ texture_disabled = ExtResource("10_r2sij")
 stretch_mode = 4
 
 [node name="Level 3" type="TextureButton" parent="." unique_id=722348251]
-offset_left = 818.0
-offset_top = 287.0
-offset_right = 1105.0
-offset_bottom = 574.0
+offset_left = 1035.0
+offset_top = 279.0
+offset_right = 1322.0
+offset_bottom = 566.0
 texture_normal = ExtResource("11_wn6f5")
 texture_pressed = ExtResource("12_1f2c6")
 texture_hover = ExtResource("13_de12y")
@@ -64,25 +60,14 @@ texture_disabled = ExtResource("14_lmfrl")
 stretch_mode = 4
 
 [node name="Level 4" type="TextureButton" parent="." unique_id=1784953788]
-offset_left = 1213.0
-offset_top = 276.0
-offset_right = 1513.0
-offset_bottom = 576.0
+offset_left = 1414.0
+offset_top = 537.0
+offset_right = 1714.0
+offset_bottom = 837.0
 texture_normal = ExtResource("15_5fas6")
 texture_pressed = ExtResource("16_hq2v2")
 texture_hover = ExtResource("17_wo31p")
 texture_disabled = ExtResource("18_mir3q")
-stretch_mode = 4
-
-[node name="Level 5" type="TextureButton" parent="." unique_id=511890111]
-offset_left = 1558.0
-offset_top = 275.0
-offset_right = 1866.0
-offset_bottom = 583.0
-texture_normal = ExtResource("19_uqiul")
-texture_pressed = ExtResource("20_byqu3")
-texture_hover = ExtResource("21_l507i")
-texture_disabled = ExtResource("22_wua8p")
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="." unique_id=2022924737]
@@ -98,4 +83,3 @@ horizontal_alignment = 1
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Level 4" to="." method="_on_level_4_pressed"]
-[connection signal="pressed" from="Level 5" to="." method="_on_level_5_pressed"]

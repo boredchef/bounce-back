@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d0s6q0reuu2ur"]
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_n0qsc"]
-[ext_resource type="PackedScene" uid="uid://c57r8mkd832iq" path="res://Function Scenes (Menu, UI, etc)/UI/ui.tscn" id="2_dilhk"]
 [ext_resource type="PackedScene" uid="uid://b5w2ofm11u74j" path="res://Elements/Moving Trampoline/moving_platform.tscn" id="3_3mhv4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
@@ -21,8 +20,6 @@ shape = SubResource("WorldBoundaryShape3D_tb2w5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=591469964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.7703505, 0)
-
-[node name="UI" parent="." unique_id=531608278 instance=ExtResource("2_dilhk")]
 
 [node name="Moving Platform" parent="." unique_id=1393809622 instance=ExtResource("3_3mhv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

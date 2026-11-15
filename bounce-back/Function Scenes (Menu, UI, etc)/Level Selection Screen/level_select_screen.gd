@@ -4,29 +4,23 @@ extends Node2D
 @onready var l2 = $"Level 2"
 @onready var l3 = $"Level 3"
 @onready var l4 = $"Level 4"
-@onready var l5 = $"Level 5"
 
 func _ready() -> void:
 	l1.disabled = false
 	l2.disabled = false
 	l3.disabled = false
 	l4.disabled = false
-	l5.disabled = false
 	match GameController.level_beat:
 		0:
 			l2.disabled = true
 			l3.disabled = true
 			l4.disabled = true
-			l5.disabled = true
 		1:
 			l3.disabled = true
 			l4.disabled = true
-			l5.disabled = true
 		2:
 			l4.disabled = true
-			l5.disabled = true
-		3:
-			l5.disabled = true
+
 
 func _on_level_1_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_1.tscn")
@@ -51,9 +45,3 @@ func _on_level_4_pressed() -> void:
 	SceneLoader.transition_to_scene("res://Levels/level_4.tscn")
 	GameController.current_scene = "res://Levels/level_4.tscn"
 	l4.disabled = true
-
-
-func _on_level_5_pressed() -> void:
-	SceneLoader.transition_to_scene("res://Levels/level_5.tscn")
-	GameController.current_scene = "res://Levels/level_5.tscn"
-	l5.disabled = true
