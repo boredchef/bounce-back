@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b68eepq1a8qk2" path="res://Sprites/stone.png" id="3_pses1"]
 [ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="4_u0s3x"]
 [ext_resource type="PackedScene" uid="uid://do028lkniieeb" path="res://level_complete.tscn" id="5_ki7po"]
+[ext_resource type="PackedScene" uid="uid://crtdj5ck86bvk" path="res://Elements/Moving Trampoline/reset_button.tscn" id="6_321yd"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u0s3x"]
 
@@ -38,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_u0s3x")
 
 [node name="floor mesh" type="MeshInstance3D" parent="World Boundary" unique_id=941458826]
-transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0)
+transform = Transform3D(227.0405, 0, 0, 0, 227.0405, 0, 0, 0, 227.0405, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ki7po")
 
 [node name="back collision" type="CollisionShape3D" parent="World Boundary" unique_id=1344343070]
@@ -142,12 +143,14 @@ use_collision = true
 size = Vector3(9.567383, 1, 13.913)
 
 [node name="Trampoline Checkpoint" parent="." unique_id=96018135 instance=ExtResource("4_u0s3x")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 61.801003, -0.025081635, 2.2534928)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 61.801003, -0.4417982, 2.2534928)
 launch_force = 17
 
 [node name="Trampoline Checkpoint2" parent="." unique_id=913578229 instance=ExtResource("4_u0s3x")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.855087, 12.991058, -1.4561129)
-launch_force = 14
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 53.855087, 12.974564, -1.4561129)
+launch_force = 25
 
 [node name="Area3D" parent="." unique_id=536826463 instance=ExtResource("5_ki7po")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.984436, 13.891396, 3.486927)
+
+[node name="Reset Button" parent="." unique_id=997039079 instance=ExtResource("6_321yd")]

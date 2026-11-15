@@ -38,6 +38,7 @@ var just_launched: bool = false
 var lockedY: bool = true
 var posY: float = 5.0
 
+var prevVeVely = 1
 var prevVelY = 1
 func _ready() -> void:
 	applySkin()
@@ -95,13 +96,11 @@ func _physics_process(delta: float) -> void:
 			var fall_distance: float = highest_y - landing_y
 			current_bounce += fall_distance * height_sensitivity
 			
+		print(current_bounce)
 		current_bounce = clamp(current_bounce, min_bounce, max_bounce)
 		
 		if impact_velocity_y < -min_bounce_velocity:
 			velocity.y = -impact_velocity_y * current_bounce
-		else:
-			velocity.y = 0.0
-			GameController.die()
 		
 		
 		
@@ -110,9 +109,11 @@ func _physics_process(delta: float) -> void:
 			return
 		
 	print(prevVelY, velocity.y)
-	if prevVelY == 0 and velocity.y == 0:
+	if prevVelY == 0 and velocity.y == 0 and prevVeVely == 0:
+		print("Get prevevelied")
 		get_tree().reload_current_scene()
 	else:
+		prevVeVely = prevVelY
 		prevVelY = velocity.y
 
 func roll_sphere() -> void:
