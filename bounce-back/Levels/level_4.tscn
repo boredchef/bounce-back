@@ -5,8 +5,13 @@
 [ext_resource type="Script" uid="uid://re5wqeiheebp" path="res://moving_platform.gd" id="3_t60mx"]
 [ext_resource type="Script" uid="uid://d3gxpf1afxhfa" path="res://Elements/Trampoline on God/trampoline_checkpoint.gd" id="4_ujo87"]
 [ext_resource type="Texture2D" uid="uid://b3kc2xyjcq1nj" path="res://Sprites/seamless-curve-lines-motifs-pattern-contemporary-decoration-for-interior-exterior-carpet-textile-garment-cloth-silk-tile-plastic-paper-wrapping-wallpaper-background-ect-vector.jpg" id="5_hvgxt"]
+[ext_resource type="PackedScene" uid="uid://b5w2ofm11u74j" path="res://Elements/Moving Trampoline/moving_platform.tscn" id="6_hvgxt"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_v8ptl"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6xw43"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tb2w5"]
 height = 0.07946777
@@ -72,14 +77,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.092548, 2.6119916)
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=244245329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1946962, 0)
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=2057108098]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.1946962, 3.6881542)
+shape = SubResource("WorldBoundaryShape3D_v8ptl")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=488299449]
 shape = SubResource("WorldBoundaryShape3D_tb2w5")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=640979041]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.001249, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_6xw43")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1162187964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4392605, 0)
 
 [node name="Area3D" parent="." unique_id=536826463 instance=ExtResource("2_e78ah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.422295, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.80774, 0, 0)
 level = 4
 
 [node name="Moving Platform" type="Node3D" parent="." unique_id=1393809622]
@@ -119,5 +132,8 @@ curve = SubResource("Curve3D_hvgxt")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Moving Platform/Path3D" unique_id=2033501963]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+
+[node name="Moving Platform2" parent="." unique_id=775990988 instance=ExtResource("6_hvgxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4407046, 2.7518675)
 
 [connection signal="body_entered" from="Moving Platform/Trampoline Checkpoint/Area3D" to="Moving Platform/Trampoline Checkpoint" method="_on_area_3d_body_entered"]
