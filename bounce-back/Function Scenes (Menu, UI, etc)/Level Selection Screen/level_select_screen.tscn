@@ -58,36 +58,6 @@ offset_top = 26.0
 offset_right = 486.0
 offset_bottom = 66.0
 
-[node name="Level 6" type="TextureButton" parent="." unique_id=160782033]
-offset_left = 409.0
-offset_top = 34.0
-offset_right = 449.0
-offset_bottom = 74.0
-
-[node name="Level 7" type="TextureButton" parent="." unique_id=1235955685]
-offset_left = 410.0
-offset_top = 60.0
-offset_right = 450.0
-offset_bottom = 100.0
-
-[node name="Level 8" type="TextureButton" parent="." unique_id=497939732]
-offset_left = 226.0
-offset_top = 45.0
-offset_right = 266.0
-offset_bottom = 85.0
-
-[node name="Level 9" type="TextureButton" parent="." unique_id=1335409520]
-offset_left = 103.0
-offset_top = 68.0
-offset_right = 143.0
-offset_bottom = 108.0
-
-[node name="Level 10" type="TextureButton" parent="." unique_id=1043691570]
-offset_left = 552.0
-offset_top = 324.0
-offset_right = 592.0
-offset_bottom = 364.0
-
 [node name="Label" type="Label" parent="." unique_id=2022924737]
 offset_left = 1.0
 offset_top = 48.0
@@ -102,8 +72,3 @@ horizontal_alignment = 1
 [connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Level 4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="Level 5" to="." method="_on_level_5_pressed"]
-[connection signal="pressed" from="Level 6" to="." method="_on_level_6_pressed"]
-[connection signal="pressed" from="Level 7" to="." method="_on_level_7_pressed"]
-[connection signal="pressed" from="Level 8" to="." method="_on_level_8_pressed"]
-[connection signal="pressed" from="Level 9" to="." method="_on_level_9_pressed"]
-[connection signal="pressed" from="Level 10" to="." method="_on_level_10_pressed"]
