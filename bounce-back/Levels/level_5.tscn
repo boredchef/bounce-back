@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d1f4l5vtm40uw"]
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_a6k8o"]
-[ext_resource type="Texture2D" uid="uid://kyi3m4qp5ng4" path="res://Sprites/WoodFluffy.png" id="2_ki7po"]
-[ext_resource type="Texture2D" uid="uid://bssu5wxehe1b2" path="res://Sprites/FluffingCobblestone.png" id="3_321yd"]
+[ext_resource type="Texture2D" uid="uid://cxvg184w2ipcv" path="res://Sprites/wood.png" id="2_ftuqy"]
+[ext_resource type="Texture2D" uid="uid://b68eepq1a8qk2" path="res://Sprites/stone.png" id="3_pses1"]
 [ext_resource type="PackedScene" uid="uid://uatwcqrtpvmw" path="res://Elements/Trampoline on God/trampoline_checkpoint.tscn" id="4_u0s3x"]
 [ext_resource type="PackedScene" uid="uid://do028lkniieeb" path="res://level_complete.tscn" id="5_ki7po"]
 [ext_resource type="PackedScene" uid="uid://crtdj5ck86bvk" path="res://Elements/Moving Trampoline/reset_button.tscn" id="6_321yd"]
@@ -10,7 +10,7 @@
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u0s3x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_absw3"]
-albedo_texture = ExtResource("2_ki7po")
+albedo_texture = ExtResource("2_ftuqy")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -18,21 +18,13 @@ uv1_world_triplanar = true
 material = SubResource("StandardMaterial3D_absw3")
 size = Vector2(100, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_321yd"]
-albedo_texture = ExtResource("3_321yd")
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l70j1"]
-albedo_texture = ExtResource("3_321yd")
+albedo_texture = ExtResource("3_pses1")
 uv1_triplanar = true
-uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_321yd"]
 material = SubResource("StandardMaterial3D_l70j1")
 size = Vector2(100, 100)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xify"]
-albedo_texture = ExtResource("3_321yd")
 
 [node name="Level5" type="Node3D" unique_id=279239164]
 
@@ -56,7 +48,6 @@ shape = SubResource("WorldBoundaryShape3D_u0s3x")
 
 [node name="back mesh" type="MeshInstance3D" parent="World Boundary" unique_id=490734317]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 29.608227, -0.1653347, -4.9490356)
-material_override = SubResource("StandardMaterial3D_321yd")
 mesh = SubResource("PlaneMesh_321yd")
 
 [node name="left collision" type="CollisionShape3D" parent="World Boundary" unique_id=499610612]
@@ -65,7 +56,6 @@ shape = SubResource("WorldBoundaryShape3D_u0s3x")
 
 [node name="left mesh" type="MeshInstance3D" parent="World Boundary" unique_id=1423106171]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -9.248587, 0.467, -14.2)
-material_override = SubResource("StandardMaterial3D_1xify")
 mesh = SubResource("PlaneMesh_321yd")
 
 [node name="4th wall" type="CollisionShape3D" parent="World Boundary" unique_id=242404736]
