@@ -94,6 +94,8 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -impact_velocity_y * current_bounce
 		else:
 			velocity.y = 0.0
+			GameController.die()
+		
 			
 		if just_launched:
 			just_launched = false
