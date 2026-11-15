@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7lm88vri1742"]
+
+[ext_resource type="Texture2D" uid="uid://ckqe1tn24ttfl" path="res://Sprites/basketball.png" id="1_3ebk5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6pntd"]
+load_path = "res://.godot/imported/basketball.png-fe30a066b2e27aa5342e78a87dd14e5c.s3tc.ctex"
+
+[resource]
+albedo_texture = ExtResource("1_3ebk5")
+roughness_texture = SubResource("CompressedTexture2D_6pntd")

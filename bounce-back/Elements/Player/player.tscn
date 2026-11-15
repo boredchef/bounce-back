@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://dpyakersvlvjj"]
 
 [ext_resource type="Script" uid="uid://c7nlkqnkaso2v" path="res://Elements/Player/player.gd" id="1_a3htu"]
-[ext_resource type="Texture2D" uid="uid://diwsrg2fvgrsp" path="res://Sprites/thissucksandisatrampoline.jpg" id="2_a3htu"]
+[ext_resource type="Material" uid="uid://fswatrxgboxc" path="res://Balls/tennis.tres" id="2_a3htu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7ifq1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8in3v"]
-albedo_texture = ExtResource("2_a3htu")
-
 [sub_resource type="SphereMesh" id="SphereMesh_n0qsc"]
-material = SubResource("StandardMaterial3D_8in3v")
+material = ExtResource("2_a3htu")
 
 [node name="player" type="CharacterBody3D" unique_id=285939949]
 script = ExtResource("1_a3htu")

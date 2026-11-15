@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fswatrxgboxc"]
+
+[ext_resource type="Texture2D" uid="uid://b5cu45w1w5gl4" path="res://Sprites/tennis.png" id="1_3cty0"]
+
+[resource]
+albedo_texture = ExtResource("1_3cty0")
