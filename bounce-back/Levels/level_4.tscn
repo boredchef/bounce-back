@@ -2,12 +2,72 @@
 
 [ext_resource type="PackedScene" uid="uid://dpyakersvlvjj" path="res://Elements/Player/player.tscn" id="1_ftfcu"]
 [ext_resource type="PackedScene" uid="uid://do028lkniieeb" path="res://level_complete.tscn" id="2_e78ah"]
+[ext_resource type="Script" uid="uid://re5wqeiheebp" path="res://moving_platform.gd" id="3_t60mx"]
+[ext_resource type="Script" uid="uid://d3gxpf1afxhfa" path="res://Elements/Trampoline on God/trampoline_checkpoint.gd" id="4_ujo87"]
+[ext_resource type="Texture2D" uid="uid://b3kc2xyjcq1nj" path="res://Sprites/seamless-curve-lines-motifs-pattern-contemporary-decoration-for-interior-exterior-carpet-textile-garment-cloth-silk-tile-plastic-paper-wrapping-wallpaper-background-ect-vector.jpg" id="5_hvgxt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tb2w5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tb2w5"]
+height = 0.07946777
+radius = 0.8876953
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47i5a"]
+albedo_texture = ExtResource("5_hvgxt")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v8ptl"]
+material = SubResource("StandardMaterial3D_47i5a")
+top_radius = 0.888
+bottom_radius = 0.888
+height = 0.08
+
+[sub_resource type="Animation" id="Animation_jcjkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kin2i"]
+resource_name = "move_along_path"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbj6g"]
+_data = {
+&"RESET": SubResource("Animation_jcjkn"),
+&"move_along_path": SubResource("Animation_kin2i")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_hvgxt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="Level4" type="Node3D" unique_id=719727806]
 
 [node name="Player" parent="." unique_id=526610686 instance=ExtResource("1_ftfcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.092548, 2.6119916)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=244245329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1946962, 0)
@@ -20,3 +80,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4392605, 0)
 
 [node name="Area3D" parent="." unique_id=536826463 instance=ExtResource("2_e78ah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.422295, 0, 0)
+level = 4
+
+[node name="Moving Platform" type="Node3D" parent="." unique_id=1393809622]
+transform = Transform3D(0.999991, -0.004004709, 0.0013808325, 0.004009738, 0.9999853, -0.0036559862, -0.0013661612, 0.003661494, 0.9999924, 0, 1.4452085, 0)
+script = ExtResource("3_t60mx")
+speed = 2.495
+time_to_complete_paths = 13.0
+
+[node name="Trampoline Checkpoint" type="Node3D" parent="Moving Platform" unique_id=96018135]
+script = ExtResource("4_ujo87")
+
+[node name="Area3D" type="Area3D" parent="Moving Platform/Trampoline Checkpoint" unique_id=1467098173]
+transform = Transform3D(1, -5.588845e-10, 2.3283064e-10, -5.1841198e-11, 1, 0, -1.1641532e-10, 0, 0.99999994, 0.0001335293, 0.033300757, -0.00012174947)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Moving Platform/Trampoline Checkpoint/Area3D" unique_id=1111801282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0016479492, 0)
+shape = SubResource("CylinderShape3D_tb2w5")
+debug_color = Color(0.94364166, 5.4869056e-06, 0.60294896, 0.41960785)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Moving Platform/Trampoline Checkpoint" unique_id=1542870229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015981197, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Moving Platform/Trampoline Checkpoint/StaticBody3D" unique_id=2047712885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0016479492, 0)
+shape = SubResource("CylinderShape3D_tb2w5")
+debug_color = Color(0.94364166, 5.4869056e-06, 0.60294896, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Moving Platform/Trampoline Checkpoint/StaticBody3D/CollisionShape3D2" unique_id=1111672059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009582311, 0)
+mesh = SubResource("CylinderMesh_v8ptl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving Platform" unique_id=304888767]
+libraries/ = SubResource("AnimationLibrary_qbj6g")
+
+[node name="Path3D" type="Path3D" parent="Moving Platform" unique_id=796345287]
+curve = SubResource("Curve3D_hvgxt")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Moving Platform/Path3D" unique_id=2033501963]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+
+[connection signal="body_entered" from="Moving Platform/Trampoline Checkpoint/Area3D" to="Moving Platform/Trampoline Checkpoint" method="_on_area_3d_body_entered"]
