@@ -61,6 +61,7 @@ Jump={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+3d/default_gravity_vector=Vector3(0, -2, 0)
 
 [rendering]
 

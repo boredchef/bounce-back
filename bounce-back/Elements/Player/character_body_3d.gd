@@ -4,16 +4,15 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 3
 var BOUNCES = 20.0
-var prev_vel = 0
+var prev_on_floor = false
 
 func _physics_process(delta: float) -> void:
+	print(position)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		prev_vel = velocity.y
 	if is_on_floor():
-		print(prev_vel + get_gravity().y * delta, BOUNCES/2)
-		velocity.y = BOUNCES / 2
+		velocity.y += BOUNCES / 2
 		BOUNCES -= 1
 		GameController.jumps_remaining = BOUNCES
 	

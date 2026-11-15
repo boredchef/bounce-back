@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var playerposition = character_body_3d.position
 	var cameraposition = camera_3d.position
 	var hyp = sqrt((playerposition.z - cameraposition.z)**2 + (playerposition.y - cameraposition.y)**2)
